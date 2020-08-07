@@ -22,15 +22,19 @@ def intersection(arrays):
     cache = {}
     # loop through arrays?
     for i in arrays:
-        # check if number is in cache
-        # yes? -> increment by 1
-        if i in cache:
-            cache[i] += 1
-        # no? (not in cache) -> initialize to 1
-        else:
-            cache[i] = 1
+        # i is a single array within the parent array
+        # need to do a nested loop to access elements in the child arrays
+        for element in i:
+            # check if number is in cache
+            # yes? -> increment by 1
+            if element in cache:
+                cache[element] += 1
+            # no? (not in cache) -> initialize to 1
+            else:
+                cache[element] = 1
     # return nums from cache? not entire cache?
-    return
+    # expected output array of 1 or 2 values
+    return []
 
 
 if __name__ == "__main__":

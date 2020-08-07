@@ -19,6 +19,8 @@ output can be in any order
 
 
 def intersection(arrays):
+    # length used as comparison in return statement
+    length = len(arrays)
     cache = {}
     # loop through arrays?
     for i in arrays:
@@ -33,8 +35,10 @@ def intersection(arrays):
             else:
                 cache[element] = 1
     # return nums from cache? not entire cache?
-    # expected output array of 1 or 2 values
-    return []
+    # definitely not entire cache
+    # expected output array
+    # list comprehension, .items() oppositie of .keys()
+    return [element[0] for element in cache.items() if element[1] is length]
 
 
 if __name__ == "__main__":

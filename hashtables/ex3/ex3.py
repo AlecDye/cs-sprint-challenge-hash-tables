@@ -1,10 +1,44 @@
-def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+"""
+use hashtable
 
-    return result
+Goal: Find the intersections (if any) of all input arrays
+
+input: list of arrays
+[
+    [1, 2, 3, 4, 5],
+    [12, 7, 2, 9, 1],
+    [99, 2, 7, 1,]
+]
+
+output:
+[1, 2]
+output can be in any order
+"""
+# hash table
+# cache goes inside func scope or else test data stacks
+
+
+def intersection(arrays):
+    # length used as comparison in return statement
+    length = len(arrays)
+    cache = {}
+    # loop through arrays?
+    for i in arrays:
+        # i is a single array within the parent array
+        # need to do a nested loop to access elements in the child arrays
+        for element in i:
+            # check if number is in cache
+            # yes? -> increment by 1
+            if element in cache:
+                cache[element] += 1
+            # no? (not in cache) -> initialize to 1
+            else:
+                cache[element] = 1
+    # return nums from cache? not entire cache?
+    # definitely not entire cache
+    # expected output array
+    # list comprehension, .items() oppositie of .keys()
+    return [element[0] for element in cache.items() if element[1] is length]
 
 
 if __name__ == "__main__":

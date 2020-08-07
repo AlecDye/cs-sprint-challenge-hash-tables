@@ -12,12 +12,25 @@ input: list of arrays
 
 output:
 [1, 2]
+output can be in any order
 """
-cache = {}
+# hash table
+# cache goes inside func scope or else test data stacks
+
 
 def intersection(arrays):
-
-    pass
+    cache = {}
+    # loop through arrays?
+    for i in arrays:
+        # check if number is in cache
+        # yes? -> increment by 1
+        if i in cache:
+            cache[i] += 1
+        # no? (not in cache) -> initialize to 1
+        else:
+            cache[i] = 1
+    # return nums from cache? not entire cache?
+    return
 
 
 if __name__ == "__main__":

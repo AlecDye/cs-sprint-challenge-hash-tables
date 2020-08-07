@@ -23,11 +23,19 @@ Commit your code regularly and meaningfully. This practice helps both you (in ca
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your answers beforehand.
 
 1. Hashing functions
+   used to map data of an unknown size to fixed-size values (key:item pairing)
 2. Collision resolution
+   either using linked lists (easily insert new values while reseting next/prev node) or initializing an array with the length of the input and None values. Collisions will be redirected to nearest "open" slot.
 3. Performance of basic hash table operations
+   O(1) with no collisions, O(n) at worst case
 4. Load factor
+   load factor = number of keys within the hash table / capacity of the hash table
 5. Automatic resizing
+   we can't predict the required size of the input ahead of time. Once the load factor is exceeded we need to duplicate the space allocated for the original table while maintaining the original table (we double the table and even multiply it when needed)
 6. Various use cases for hash tables
+   find duplicates in a data set, passwords, searching large data sets (on average hash tables are faster than search trees)
+
+   caching
 
 We expect you to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
